@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <title>Label Designing App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="app-page">
+        <div id="label-for-download" class="canvas">
+            <article class="canvas-container">
+                <article class="label">
+                    <article class="label-container" id="label-container">
+                        <div id="details">
+                            <span id="image-container">
+                                <article id="canvas">
+                                    <div id="canvas-edit"> 
+                                    </div>
+                                </article>
+                            </span>
+                            <span id="info-container">
+                                <p id="displayText"></p>
+                                <table>
+                                    <tr>
+                                        <td id="label1" class="label-det label-det-1">Std ______________ </td>
+                                        <td id="label2" class="label-det">Sec ______________ </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="label3" class="label-det" colspan="2">Subject _______________________________ </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="label4" class="label-det" colspan="2">School ____________________________________</td>
+                                    </tr>
+                                </table>
+                            </span>
+                        </div>
+                    </article>
+                </article>
+            </article>
+        </div>
+        <div class="panel">
+            <article class="panel-container">
+                <div class="panel-table">
+
+                    <article class="row">
+                        <span class="header-row"> 
+                            <span class="header-content">
+                                Edit Background image
+                            </span>
+                        </span>
+                        <span class="input-row">
+                            <span class="input">
+                                <input accept="image/*" id="background-file-input" class="input-file" type="file" onchange="bgImageUpload(event)">
+                            </span>
+                        </span>
+                    </article>
+
+                    <article class="row">
+                        <span class="header-row">
+                            <span class="header-content">
+                                Edit photo
+                            </span>
+                        </span>
+                        <span class="input-row">
+                            <span class="input">
+                                <input accept="image/*" id="photo-file-input" class="input-file" type="file" onchange="imageUpload(event)">
+                            </span>
+                        </span>
+                    </article>
+
+                    <article class="row">
+                        <span class="header-row">
+                            <span class="header-content">
+                                Toggle photo border
+                            </span>
+                        </span>
+                        <span class="input-row">
+                            <span class="input">
+                                <input id="photo-border-input" class="input-range" type="range" min="0" max="10" value="5">
+                            </span>
+                        </span>
+                    </article>
+
+                    <article class="row">
+                        <span class="header-row">
+                            <span class="header-content">
+                                Change photo holder size
+                            </span>
+                        </span>
+                        <span class="input-row">
+                            <span class="input">
+                                <input id="photo-holder-size-input" class="input-range" type="range" min="130" max="230" value="180">
+                            </span>
+                        </span>
+                    </article>
+
+                    <article class="row">
+                        <span class="header-row">
+                            <span class="header-content">
+                                Enter text
+                            </span>
+                        </span>
+                        <span class="input-row">
+                            <span class="input">
+                                <input id="text-input" class="input-text" type="text" oninput="displayName()">
+                            </span>
+                        </span>
+                    </article>
+
+                    <article class="row">
+                        <span class="header-row">
+                            <span class="header-content">
+                                Adjust font size
+                            </span>
+                        </span>
+                        <span class="content-row">
+                            <span class="content">
+                                Change name font size
+                            </span>
+                        </span>
+                        <span class="input-row">
+                            <span class="input">
+                                <input id="name-font-size-input" class="input-range" type="range" min="10" max="50" value="20">
+                            </span>
+                        </span>
+                        <span class="content-row">
+                            <span class="content">
+                                Change labels font size
+                            </span>
+                        </span>
+                        <span class="input-row">
+                            <span class="input">
+                                <input id="labels-font-size-input" class="input-range" type="range" min="10" max="20" value="15">
+                            </span>
+                        </span>
+                    </article>
+                    
+                    <article class="row">
+                        <span class="header-row">
+                            <span class="header-content">
+                                Edit photo holder
+                            </span>
+                        </span>
+                        <span class="content-row">
+                            <span class="content">
+                                Move
+                            </span>
+                        </span>
+                        <span class="input-row-buttons-move">
+                            <span class="input">
+                                <input id="element-left-move" class="input-button-move" type="button" value="&#8592;">
+                            </span>
+                            <span class="input">
+                                <input id="element-right-move" class="input-button-move" type="button" value="&#8594;">
+                            </span>
+                            <span class="input">
+                                <input id="element-up-move" class="input-button-move" type="button" value="&#8593;">
+                            </span>
+                            <span class="input">
+                                <input id="element-down-move" class="input-button-move" type="button" value="&#8595;">
+                            </span>
+                        </span>
+                    </article>
+
+                    <article class="row">
+                        <span class="header-row">
+                            <span class="header-content">
+                                Edit photo position
+                            </span>
+                        </span>
+                        <span class="content-row">
+                            <span class="content">
+                                Move
+                            </span>
+                        </span>
+                        <span class="input-row-buttons-move">
+                            <span class="input">
+                                <input id="photo-left-move" class="input-button-move" type="button" value="&#8592;">
+                            </span>
+                            <span class="input">
+                                <input id="photo-right-move" class="input-button-move" type="button" value="&#8594;">
+                            </span>
+                            <span class="input">
+                                <input id="photo-up-move" class="input-button-move" type="button" value="&#8593;">
+                            </span>
+                            <span class="input">
+                                <input id="photo-down-move" class="input-button-move" type="button" value="&#8595;">
+                            </span>
+                        </span>
+                        <span class="content-row">
+                            <span class="content">
+                                Rotate
+                            </span>
+                        </span>
+                        <span class="input-row-buttons-arrow">
+                            <span class="input">
+                                <input id="photo-anticlockwise-rot" class="input-button-arrow" type="button" value="&#8630;">
+                            </span>
+                            <span class="input">
+                                <input id="photo-clockwise-rot" class="input-button-arrow" type="button" value="&#8631;">
+                            </span>
+                        </span>
+                    </article>
+
+                    <article class="row">
+                        <span class="input-row">
+                            <span class="input">
+                                <input id="download-button-input" class="input-download" type="button" value="Download">
+                            </span>
+                        </span>
+                    </article>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script src="LabelDesignApp.js"></script>
+</body>
+</html>

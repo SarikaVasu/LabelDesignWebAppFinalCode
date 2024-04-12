@@ -1,0 +1,19 @@
+[*]Frontend
+[*]Bg photo
+[*]photo
+[*]photo border
+[*]add text
+[*]name font size change
+[*]others font size change
+[*]change photoholder size, inc radius
+[*]photo holder move left
+[*]photo holder move right
+[*]photo holder move up
+[*]photo holder move down
+[*]photo move left
+[*]photo move right
+[*]photo move up
+[*]photo move down
+[*]photo rot anticlockwise
+[*]photo rot clockwise
+[]download
