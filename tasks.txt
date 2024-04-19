@@ -17,3 +17,9 @@
 [*]photo rot anticlockwise
 [*]photo rot clockwise
 []download
+
+
+Tip:
+To avoid overflow during zooming, don't just restrict thw width instead set a margin and padding (likely in % usnit) to avoid messing up your layouot or use overflow: auto; in *{}
+
+//While zooming, I can't see left most or top most

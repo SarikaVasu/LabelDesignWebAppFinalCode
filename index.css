@@ -6,54 +6,54 @@
 .app-page {
     height: 100vh;
     width: 100vw;
-    /* background-color: aqua; */
     display: flex;
     flex-direction: row;
 }
 .canvas {
-    height: 100%;
-    width: 65vw;
-    /* background-color: aquamarine; */
-    display: flex;
+    min-height: 100vh;
+    min-width: 65vw;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 2rem;
+    overflow: auto;
 }
 .panel {
-    height: 100%;
+    min-height: 100vh;
     width: 35vw;
-    /* background-color:blueviolet; */
     display: flex;
     align-items: center;
     justify-content: center;
     border-left: 1px solid grey;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    
 }
 .canvas-container {
-    width: 80%;
-    height: 80%;
-    display: flex;
+    min-width: 50rem;
+    height: 35rem;
+    display: inline-flex;
     flex-direction: column;
-    /* background-color: blanchedalmond; */
     align-items: center;
     justify-content: center;
+    margin: 5%;   
 }
 .label {
-    width: 65%;
-    height: 50%;
+    min-width: 35rem;
+    height: 15rem;
     border-radius: 1rem;
-    display: flex;
+    display: inline-flex;
 }
 .label-container {
     position: relative; 
-    width: 100%;
-    height: 100%;
-    /* background-color: rgb(255, 213, 213); */
+    width: 35rem;
+    height: 16rem;
     display: flex;
     border-radius: 1rem;
     background-size: cover;
     background-position: center;
-    background-image: url(bg.avif);
+    background-image: url('bg.avif');
     z-index: 0;
-
 }
 #details {
     width: 100%;
@@ -62,17 +62,16 @@
     flex-direction: row;
 }
 #image-container {
-    width: 33%;
+    min-width: 33%;
     height: 100%;
-    /* background-color: aqua; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #canvas {
     position: absolute;
-    top: 90px;
-    left: 60px;
+    top: 4rem;
+    left: 4rem;
     height: 130px;
     width: 130px;
     border-radius: 50%;
@@ -81,11 +80,12 @@
     background-image: linear-gradient(to right, rgba(242, 135, 219, 0.641) 50%, rgba(20, 158, 186, 0.278) 50%);
     box-shadow: 0 0 20px 10px rgba(104, 106, 107, 0.5) ;
     z-index: 1;
+    
 }
 #canvas-edit {
     position: absolute;
-    top: 5px;
-    left: 5px;
+    top: 0.25rem;
+    left: 0.25rem;
     height: 120px;
     width: 120px;
     border-radius: 50%;
@@ -99,23 +99,32 @@
 #info-container {
     width: 67%;
     height: 100%;
-    /* background-color: aquamarine; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* background-color: red; */
+    justify-content:space-evenly;
+
 }
 #displayText {
     display: flex;
-    position: absolute;
-    top: 3rem;
+    /* position: absolute;
+    top: 3rem; */
     color: blue;
     font-weight: bolder;
     font-size: 1.5rem;
     z-index: 3;
     text-align: left;
     font-size: 30px;
+    margin-top: 0.25rem;
+    /* background-color: aliceblue; */
+}
+#displayTable {
+    display: flex;
+    margin-bottom: 0.25rem;
+    /* background-color: #fff; */
 }
 .label-det {
     font-weight: bolder;
@@ -132,26 +141,23 @@
 
 .panel-container {
     width: 90%;
-    height: 95%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    /* background-color: blanchedalmond; */
-    padding-top: 5%;
-    padding-bottom: 5%;
     padding-left: 10%;
     padding-right: 7%;
-
+    padding-top: 7%;
+    padding-bottom: 7%;
+    overflow: auto;
 }
 .row {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* background-color: aquamarine; */
     padding: 0.45rem;
     justify-content: space-evenly;
     border: 1px dotted grey;
     border-radius: 1rem;
-    
 }
 .header-row {
     font-weight: bold;
@@ -159,26 +165,22 @@
 }
 .header-row {
     display: flex;
-    /* background-color: blueviolet; */
     padding: 0.15rem;
     text-align: center;
 }
 .content-row {
     display: flex;
-    /* background-color: blue; */
     padding: 0.05rem;
     text-align: center;
 }
 .input-row {
     display: flex;
-    /* background-color: aqua; */
     padding: 0.05rem;
     text-align: center;
     justify-content: space-evenly;
 }
 .input-row-buttons-move {
     display: flex;
-    /* background-color: aqua; */
     padding: 0.05rem;
     text-align: center;
     justify-content: space-evenly;
@@ -187,7 +189,6 @@
 }
 .input-row-buttons-arrow {
     display: flex;
-    /* background-color: aqua; */
     padding: 0.05rem;
     text-align: center;
     justify-content: space-evenly;
@@ -204,14 +205,15 @@
     width: 60%;
 }
 .input-button-move {
-    height: 100%;
-    width: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
     padding: 0.25rem;
     font-size: x-large;
+    text-align: center;
 }
 .input-button-arrow {
-    height: 90%;
-    width: 40%;
+    height: 3rem;
+    width: 3rem;
     padding: 0.25rem;
     font-size: x-large; 
 } 
